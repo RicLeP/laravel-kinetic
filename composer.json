@@ -1,0 +1,56 @@
+{
+    "name": "riclep/laravel-kinetic",
+    "description": "Laravel wrapper for the Team Kinetic API",
+    "keywords": [
+        "riclep",
+        "Team Kinetic",
+        "volunteer",
+        "laravel"
+    ],
+    "homepage": "https://github.com/riclep/laravel-kinetic",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Richard Le Poidevin",
+            "email": "ric@uandus.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Riclep\\KineticApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Riclep\\KineticApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Riclep\\KineticApi\\KineticApiServiceProvider"
+            ],
+            "aliases": {
+                "Kinetic": "Riclep\\KineticApi\\Facades\\Kinetic"
+            }
+        }
+    }
+}
